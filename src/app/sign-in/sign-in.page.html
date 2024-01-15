@@ -10,4 +10,21 @@
       <ion-title size="large">signIn</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-input label="Phone Number" [(ngModel)]="phoneNumber"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="signInWithPhone()" shape="round">Send code</ion-button>
+
+  <ion-list>
+    <ion-item>
+      <ion-input label="OTP code" [(ngModel)]="code"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="verificationCode()" shape="round">Sign in</ion-button>
+  <div id="recaptcha-container"></div>
 </ion-content>
