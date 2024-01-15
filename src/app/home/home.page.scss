@@ -31,12 +31,17 @@
 }
 
 .right > .message-container {
+  background: radial-gradient(ellipse at top right, #3677b2, #244f76),
+    linear-gradient(to left, #244f76, #3677b2);
+  box-shadow: -5px 5px 7px #0004;
   border-radius: 10px;
   border-top-right-radius: 2px;
 }
 
 .message-container {
-  background-color: darkslategray;
+  background: radial-gradient(ellipse at top left, #1e4263, #12273b),
+    linear-gradient(to right, #12273b, #1e4263);
+  box-shadow: 5px 5px 7px #0004;
   display: grid;
   justify-self: right;
   width: 200px;
