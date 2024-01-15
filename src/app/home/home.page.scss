@@ -25,3 +25,62 @@
 #container a {
   text-decoration: none;
 }
+
+.right {
+  display: grid;
+}
+
+.right > .message-container {
+  border-radius: 10px;
+  border-top-right-radius: 0;
+}
+
+.message-container {
+  background-color: darkslategray;
+  display: grid;
+  justify-self: right;
+  width: 200px;
+  padding: 10px;
+  margin: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+}
+
+.user {
+  margin-bottom: 5px;
+}
+
+.message {
+  overflow-wrap: anywhere;
+}
+
+.content {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.time {
+  text-align: right;
+  margin-top: 5px;
+}
+
+.new-message {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.send {
+  display: grid;
+}
+
+.send-button {
+  margin-bottom: 15px;
+  justify-self: center;
+}
+
+.messages::after {
+  content: "";
+  clear: both;
+  display: table;
+}

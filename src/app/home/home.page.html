@@ -1,20 +1,69 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> ClassChat </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">IphoneClassChat</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div class="messages">
+    <div>
+      <div
+        *ngFor="let message of messages"
+        [ngClass]="message.user===userName?'right':''"
+      >
+        <div class="message-container">
+          <div class="user">{{message.user}}</div>
+          <div class="content">
+            <span class="message">{{message.content }}</span>
+            <span class="time">{{message.time}}</span>
+          </div>
+          <div *ngIf="message.user===userName" class="col-12">
+            <ion-button (click)="addMessage()" shape="round" size="small">
+              <ion-icon
+                slot="icon-only"
+                name="pencil-outline"
+                width="24"
+              ></ion-icon
+            ></ion-button>
+            <ion-button
+              (click)="deleteMessage(message)"
+              shape="round"
+              size="small"
+            >
+              <ion-icon
+                slot="icon-only"
+                name="trash-outline"
+                width="24"
+              ></ion-icon
+            ></ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-list class="new-message">
+      <ion-item>
+        <ion-textarea
+          [(ngModel)]="newMessage"
+          labelPlacement="floating"
+          value=""
+        >
+          <div slot="label">
+            Message <ion-text color="danger">(Required)</ion-text>
+          </div>
+        </ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <div class="send">
+      <ion-button (click)="addMessage()" class="send-button" shape="round"
+        >Send</ion-button
+      >
+    </div>
   </div>
 </ion-content>
